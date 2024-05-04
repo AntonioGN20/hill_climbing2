@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRP Voraz</title>
+    <style>
+        body {
+            background-color: #ffe6e6; /* Light red background */
+            color: #8b0000; /* Dark red text color */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #ff6666; /* Lighter red heading color */
+        }
+
+        button {
+            background-color: #ff6666; /* Lighter red button background */
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #cc0000; /* Darker red on hover */
+        }
+
+        h2 {
+            color: #cc0000; /* Darker red heading color */
+        }
+
+        p {
+            color: #cc0000; /* Darker red paragraph text color */
+        }
+    </style>
+</head>
+<body>
+    <h1>TSP Solver</h1>
+    
+    <form action="/calcular_rutas" method="post">
+        <button type="submit">Calcular Rutas</button>
+    </form>
+    
+    {% if rutas %}
+    <h2>Rutas Óptimas:</h2>
+    <ul>
+        {% for ruta in rutas %}
+            <li>{{ ruta }}</li>
+        {% endfor %}
+    </ul>
+    <p>Distancia Total: {{ distancia_total }}</p>
+    {% endif %}
+</body>
+</html>
